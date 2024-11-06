@@ -1,6 +1,7 @@
 package com.convista.demo.config;
 
 import com.convista.demo.ai.Assistant;
+import dev.langchain4j.memory.chat.MessageWindowChatMemory;
 import dev.langchain4j.model.chat.ChatLanguageModel;
 import dev.langchain4j.service.AiServices;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +19,7 @@ public class AiAssistantConfig {
     Assistant assistant() {
         return AiServices.builder(Assistant.class)
                 .chatLanguageModel(model)
+                .chatMemory(MessageWindowChatMemory.withMaxMessages(10))
                 .build();
     }
 }
