@@ -1,0 +1,4 @@
+car1 - slow, expensive - available
+car2 - fast, cheap - not available
+car3 - slow, cheap - available
+car4 - fast, expensive - available
